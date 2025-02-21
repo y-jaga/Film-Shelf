@@ -69,19 +69,19 @@ app.get("/api/movies/top5", getTopRatedMovies);
 
 //=========Sample=======//
 //API Endpoint: http://localhost:3000/api/movies/searchMovieBytmdbId?tmdbId=616037
-app.get("/api/movies/searchMovieBytmdbId", async (req, res) => {
-  try {
-    const tmdbId = parseInt(req.query.tmdbId);
-    const response = await axiosInstance.get(`/movie/${tmdbId}/credits`, {
-      params: { api_key: process.env.TMDB_API_KEY },
-    });
+// app.get("/api/movies/searchMovieBytmdbId", async (req, res) => {
+//   try {
+//     const tmdbId = parseInt(req.query.tmdbId);
+//     const response = await axiosInstance.get(`/movie/${tmdbId}/credits`, {
+//       params: { api_key: process.env.TMDB_API_KEY },
+//     });
 
-    res.status(200).json({ movies: response.data });
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({ error: "Failed to fetch movies." });
-  }
-});
+//     res.status(200).json({ movies: response.data });
+//   } catch (error) {
+//     console.error(error);
+//     return res.status(500).json({ error: "Failed to fetch movies." });
+//   }
+// });
 
 if (process.env.NODE_ENV !== "test") {
   sequelize

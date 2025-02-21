@@ -14,7 +14,7 @@ const Watchlist = sequelize.define("Watchlist", {
 });
 
 Watchlist.associate = (models) => {
-  //one watchlist can be related to many movies
+  //one watchlist can be related to one movie
   Watchlist.belongsTo(models.Movie, {
     foreignKey: "movieId",
   });

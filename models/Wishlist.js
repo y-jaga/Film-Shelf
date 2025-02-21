@@ -13,7 +13,7 @@ const Wishlist = sequelize.define("Wishlist", {
 });
 
 Wishlist.associate = (models) => {
-  //one wishlist can be related to many movie
+  //one wishlist can be related to one movie
   Wishlist.belongsTo(models.Movie, {
     foreignKey: "movieId",
   });

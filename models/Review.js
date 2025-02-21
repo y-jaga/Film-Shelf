@@ -15,7 +15,7 @@ const Review = sequelize.define("Review", {
 });
 
 Review.associate = (models) => {
-  //one review belongs to many movies
+  //one review belongs to one movie
   Review.belongsTo(models.Movie, {
     foreignKey: "movieId",
   });

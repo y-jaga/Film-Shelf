@@ -22,7 +22,7 @@ Movie.associate = (models) => {
     foreignKey: "movieId",
   });
 
-  //one movie can belongs to many review
+  //one movie can belongs to many reviews
   Movie.hasMany(models.Review, {
     foreignKey: "movieId",
   });
